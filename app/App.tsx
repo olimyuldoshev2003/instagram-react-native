@@ -1,3 +1,4 @@
+import Home from "@/screens/Home";
 import SignIn from "@/screens/SignIn";
 import { StatusBar, StyleSheet, View } from "react-native";
 
@@ -5,7 +6,7 @@ function App() {
   return (
     <View style={styles.appComponent}>
       <StatusBar hidden />
-      <SignIn />
+      <Home />
     </View>
   );
 }

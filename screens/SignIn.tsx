@@ -20,7 +20,8 @@ const SignIn = () => {
 export default SignIn;
 
 const styles = StyleSheet.create({
-  signInComponent: {
+    signInComponent: {
+      marginTop: 20,
         flex: 1,
         paddingTop: 50,
         paddingHorizontal: 12,
