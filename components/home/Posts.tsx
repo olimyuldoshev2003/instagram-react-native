@@ -147,7 +147,7 @@ export default Posts;
 
 const styles = StyleSheet.create({
   postsComponent: {
-    marginBottom: 260,
+    marginBottom: 50,
   },
   eachPostBlock: {
     marginBottom: 22,

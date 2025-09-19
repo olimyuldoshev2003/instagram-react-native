@@ -4,17 +4,23 @@ import {
   NavigationIndependentTree,
 } from "@react-navigation/native";
 import { useEffect } from "react";
-import { StatusBar } from "react-native";
+import { Platform, StatusBar } from "react-native";
 
 function App() {
   useEffect(() => {
-    StatusBar.setHidden(true);
+    // Set status bar background color (Android only)
+    if (Platform.OS === "android") {
+      StatusBar.setBackgroundColor("black"); // Replace with your desired color
+      StatusBar.setBarStyle("light-content");
+    }
 
-    // Show again when leaving the screen
-    return () => {
-      StatusBar.setHidden(false);
-    };
+    // For iOS, we need a different approach
+    if (Platform.OS === "ios") {
+      // iOS doesn't support setBackgroundColor directly
+      // You might need to use a different library or approach
+    }
   }, []);
+
   return (
     <NavigationIndependentTree>
       <NavigationContainer>
@@ -23,4 +29,5 @@ function App() {
     </NavigationIndependentTree>
   );
 }
+
 export default App;

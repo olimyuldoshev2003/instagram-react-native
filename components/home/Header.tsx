@@ -40,7 +40,7 @@ export default Header;
 
 const styles = StyleSheet.create({
   headerHomeComponent: {
-    marginTop: 10,
+    marginTop: 25,
     paddingHorizontal: 10,
     paddingVertical: 10,
     display: `flex`,
