@@ -4,6 +4,7 @@ import {
   FlatList,
   Image,
   Pressable,
+  // ScrollView,
   StyleSheet,
   Text,
   View,
@@ -83,12 +84,73 @@ const Posts = () => {
   );
 };
 
+{
+  /* <ScrollView>
+  {posts.map((item: any) => {
+    return (
+      <View style={styles.eachPostBlock} key={item.id}>
+        <View style={styles.headerPosts}>
+          <View style={styles.imgTextBlock}>
+            <Image
+              source={{ uri: item.profile_img }}
+              style={styles.profileImg}
+            />
+            <Text style={{ color: `white` }}>{item.user}</Text>
+          </View>
+          <Pressable>
+            <Entypo name="dots-three-horizontal" size={21} color="white" />
+          </Pressable>
+        </View>
+        <View style={styles.postBlock}>
+          <Image source={{ uri: item.post }} style={styles.postImg} />
+        </View>
+        <View style={styles.footerPosts}>
+          <View style={styles.footerPostsBlock1}>
+            <View style={styles.functionalIconsBlock}>
+              <Pressable style={styles.likeButton}>
+                <Feather name="heart" size={26} color="white" />
+                <Text style={{ color: `white` }}>{item.likes}</Text>
+              </Pressable>
+              <Pressable style={styles.commentButton}>
+                <AntDesign name="message" size={24} color="white" />
+                <Text style={{ color: `white` }}>{item.comments.length}</Text>
+              </Pressable>
+              <Pressable style={styles.sendButton}>
+                <FontAwesome name="send" size={24} color="white" />
+                <Text style={{ color: `white` }}>{item.sentPosts}</Text>
+              </Pressable>
+            </View>
+            <Pressable style={styles.saveButton}>
+              <Octicons name="bookmark" size={29} color="white" />
+            </Pressable>
+          </View>
+          <View style={styles.footerPostsBlock2}>
+            <Text style={{ color: "white", fontSize: 16 }}>
+              <Text style={{ fontWeight: "bold", marginLeft: 20 }}>
+                {item.user}
+              </Text>
+              {"  "}
+              {/* Add this space between the two Text components */
+}
+// {item.caption}
+//       </Text>
+//     </View>
+//     <View style={styles.footerPostsBlock3}></View>
+//     <View style={styles.footerPostsBlock4}></View>
+//   </View>
+// </View>
+// );
+// })}
+// </ScrollView>;
+
 export default Posts;
 
 const styles = StyleSheet.create({
-  postsComponent: {},
-    eachPostBlock: {
-      marginBottom: 12,
+  postsComponent: {
+    marginBottom: 260,
+  },
+  eachPostBlock: {
+    marginBottom: 22,
     display: `flex`,
     gap: 20,
   },

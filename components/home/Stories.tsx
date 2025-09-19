@@ -1,8 +1,7 @@
+import users from "@/data/users";
 import React from "react";
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import users from "@/data/users";
-
 
 const Stories = () => {
   return (
@@ -12,7 +11,9 @@ const Stories = () => {
           return (
             <View style={styles.eachStoryBlock} key={item.id}>
               <Image source={{ uri: item.img }} style={styles.storyImg} />
-              <Text style={{ color: `white`, marginTop: 2 }}>{item.username}</Text>
+              <Text style={{ color: `white`, marginTop: 2 }}>
+                {item.username}
+              </Text>
             </View>
           );
         })}
@@ -25,9 +26,7 @@ export default Stories;
 
 const styles = StyleSheet.create({
   storiesComponent: {},
-  storiesUsers: {
-    marginTop: 10,
-  },
+  storiesUsers: {},
   eachStoryBlock: {
     display: `flex`,
     // flexDirection:"column",

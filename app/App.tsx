@@ -1,22 +1,26 @@
-import Home from "@/screens/Home";
-import SignIn from "@/screens/SignIn";
-import { StatusBar, StyleSheet, View } from "react-native";
+import StackNavigator from "@/navigators/StackNavigator";
+import {
+  NavigationContainer,
+  NavigationIndependentTree,
+} from "@react-navigation/native";
+import { useEffect } from "react";
+import { StatusBar } from "react-native";
 
 function App() {
+  useEffect(() => {
+    StatusBar.setHidden(true);
+
+    // Show again when leaving the screen
+    return () => {
+      StatusBar.setHidden(false);
+    };
+  }, []);
   return (
-    <View style={styles.appComponent}>
-      <StatusBar hidden />
-      <Home />
-    </View>
+    <NavigationIndependentTree>
+      <NavigationContainer>
+        <StackNavigator />
+      </NavigationContainer>
+    </NavigationIndependentTree>
   );
 }
-
-const styles = StyleSheet.create({
-  appComponent: {
-    flex: 1,
-    justifyContent: `center`,
-    alignItems: `center`,
-  },
-});
-
 export default App;

@@ -3,8 +3,10 @@ import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useNavigation } from "expo-router";
 
-const signInForm = () => {
+const SignInForm = () => {
+  const navigation:any = useNavigation()
   const formik: any = useFormik({
     initialValues: {
       email: "",
@@ -15,7 +17,7 @@ const signInForm = () => {
       password: Yup.string().required("Required"),
     }),
     onSubmit: (values) => {
-      console.log(values);
+      navigation.replace("Application")
     },
   });
 
@@ -65,7 +67,7 @@ const signInForm = () => {
   );
 };
 
-export default signInForm;
+export default SignInForm;
 
 const styles = StyleSheet.create({
   signInFormComponent: {
