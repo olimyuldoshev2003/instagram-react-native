@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Image,
-  Pressable,
-  SafeAreaView,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, Pressable, SafeAreaView, StyleSheet, View } from "react-native";
 
 // Icons
 import Feather from "@expo/vector-icons/Feather";
@@ -15,12 +8,12 @@ import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 const Header = () => {
   return (
     <SafeAreaView style={styles.headerHomeComponent}>
-      <TouchableOpacity>
+      <Pressable>
         <Image
           style={styles.homeLogoImg}
           source={require("../../assets/instagram-images/instagram-home-logo.png")}
         />
-      </TouchableOpacity>
+      </Pressable>
       <View style={styles.functionalityBtnsBlock}>
         <Pressable style={styles.btnPageNotifications}>
           <Feather

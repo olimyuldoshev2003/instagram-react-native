@@ -10,9 +10,9 @@ const Stories = () => {
       <ScrollView horizontal style={styles.storiesUsers}>
         {users.map((item) => {
           return (
-            <View style={styles.eachStoryBlock}>
+            <View style={styles.eachStoryBlock} key={item.id}>
               <Image source={{ uri: item.img }} style={styles.storyImg} />
-              <Text style={{ color: `white` }}>{item.username}</Text>
+              <Text style={{ color: `white`, marginTop: 2 }}>{item.username}</Text>
             </View>
           );
         })}
