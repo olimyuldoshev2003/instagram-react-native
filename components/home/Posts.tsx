@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import {
   FlatList,
   Image,
@@ -9,8 +9,6 @@ import {
   Text,
   View,
 } from "react-native";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { Modalize } from "react-native-modalize";
 
 // Icons
 import posts from "@/data/posts";
@@ -21,7 +19,6 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Octicons from "@expo/vector-icons/Octicons";
 
 const Posts = ({ onOpen }: { onOpen: any }) => {
-
   const renderItem = ({ item }: { item: any }) => {
     return (
       <View style={styles.eachPostBlock} key={item.id}>
@@ -75,16 +72,15 @@ const Posts = ({ onOpen }: { onOpen: any }) => {
   };
 
   return (
-      <SafeAreaView style={styles.container}>
-
-        {/* Posts List */}
-        <FlatList
-          data={posts}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id.toString()}
-          style={styles.postsComponent}
-        />
-      </SafeAreaView>
+    <SafeAreaView style={styles.container}>
+      {/* Posts List */}
+      <FlatList
+        data={posts}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id.toString()}
+        style={styles.postsComponent}
+      />
+    </SafeAreaView>
   );
 };
 
