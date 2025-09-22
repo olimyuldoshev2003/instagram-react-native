@@ -67,6 +67,7 @@ const TabNavigator = () => {
       <Tab.Screen
         name="Profile"
         component={Home}
+        
         options={{
           tabBarIcon({ color, size }) {
             return (
@@ -76,6 +77,7 @@ const TabNavigator = () => {
               />
             );
           },
+          
         }}
       />
     </Tab.Navigator>
