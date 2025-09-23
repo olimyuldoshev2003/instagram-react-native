@@ -97,8 +97,8 @@ const SignInForm = () => {
         // Here you would typically make an actual API call
         // For demo purposes, we'll simulate a successful login
         if (
-          values.email === "oyuldoshev39@gmail.com" &&
-          values.password === "OlimYuldoshev2003$"
+          values.email === "o39@gmail.com" &&
+          values.password === "Olim2003$"
         ) {
           navigation.replace("Application");
         } else {
@@ -227,7 +227,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   inputBlock: {
-    width: 380,
+    width: 365,
   },
   input: {
     backgroundColor: `#f8f9fa`,

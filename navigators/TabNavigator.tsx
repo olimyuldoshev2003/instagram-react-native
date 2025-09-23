@@ -1,10 +1,15 @@
-import Home from "@/screens/Home";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
-import { Image, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 
 // Icons
-import { Ionicons, MaterialIcons, Octicons } from "@expo/vector-icons";
+import {
+  // Ionicons,
+  MaterialIcons,
+  Octicons,
+} from "@expo/vector-icons";
+import StackNavigatorHomePage from "./StackNavigatorHomePage";
+import StackNavigatorExplorePage from "./StackNavigatorExplorePage";
 
 const TabNavigator = () => {
   const Tab = createBottomTabNavigator();
@@ -17,30 +22,33 @@ const TabNavigator = () => {
         tabBarShowLabel: false,
         tabBarStyle: {
           backgroundColor: `#000`,
+          borderTopColor: `#000`,
+          paddingTop: 5,
         },
         tabBarActiveBackgroundColor: `#000`,
       }}
     >
-      {/* <Tab.Screen name="SignIn" component={SignIn} options={{}} /> */}
       <Tab.Screen
-        name="Home"
-        component={Home}
+        name="HomeStack"
+        component={StackNavigatorHomePage}
         options={{
+          title: "Home",
           tabBarIcon({ color, size }) {
             return <Octicons name="home" size={size} color={color} />;
           },
         }}
       />
       <Tab.Screen
-        name="Explore"
-        component={Home}
+        name="ExploreStack"
+        component={StackNavigatorExplorePage}
         options={{
+          title: "Explore",
           tabBarIcon({ color, size }) {
             return <MaterialIcons name="explore" size={size} color={color} />;
           },
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Add"
         component={Home}
         options={{
@@ -48,8 +56,8 @@ const TabNavigator = () => {
             return <Ionicons name="add" size={size} color={color} />;
           },
         }}
-      />
-      <Tab.Screen
+      /> */}
+      {/* <Tab.Screen
         name="Reels"
         component={Home}
         options={{
@@ -63,11 +71,10 @@ const TabNavigator = () => {
             );
           },
         }}
-      />
-      <Tab.Screen
+      /> */}
+      {/* <Tab.Screen
         name="Profile"
         component={Home}
-        
         options={{
           tabBarIcon({ color, size }) {
             return (
@@ -77,9 +84,8 @@ const TabNavigator = () => {
               />
             );
           },
-          
         }}
-      />
+      /> */}
     </Tab.Navigator>
   );
 };

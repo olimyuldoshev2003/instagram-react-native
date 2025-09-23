@@ -4,8 +4,10 @@ import { Image, Pressable, SafeAreaView, StyleSheet, View } from "react-native";
 // Icons
 import Feather from "@expo/vector-icons/Feather";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import { useNavigation } from "expo-router";
 
 const Header = () => {
+  const navigation: any = useNavigation();
   return (
     <SafeAreaView style={styles.headerHomeComponent}>
       <Pressable>
@@ -15,7 +17,12 @@ const Header = () => {
         />
       </Pressable>
       <View style={styles.functionalityBtnsBlock}>
-        <Pressable style={styles.btnPageNotifications}>
+        <Pressable
+          style={styles.btnPageNotifications}
+          onPress={() => {
+            navigation.navigate("Notifications");
+          }}
+        >
           <Feather
             name="heart"
             size={24}

@@ -19,6 +19,7 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Octicons from "@expo/vector-icons/Octicons";
 
 const Posts = ({ onOpen }: { onOpen: any }) => {
+
   const renderItem = ({ item }: { item: any }) => {
     return (
       <View style={styles.eachPostBlock} key={item.id}>
